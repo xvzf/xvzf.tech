@@ -1,0 +1,60 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: xvzf-tech-svc
+  labels:
+    app: xvzf-tech
+    tier: backend
+spec:
+  selector:
+    app: xvzf-tech
+  ports:
+    - port: 80
+      targetPort: 3000
+      protocol: TCP
+      name: http
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: xvzf-tech-deploy
+  labels:
+    tier: backend
+    app: xvzf-tech
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      tier: backend
+      app: xvzf-tech
+  template:
+    metadata:
+      labels:
+        tier: backend
+        app: xvzf-tech
+    spec:
+      containers:
+        - name: website
+          image: quay.io/xvzf/xvzf.tech:master
+          ports:
+            - containerPort: 3000
+              protocol: TCP
+              name: http
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: xvzf-tech-ingress
+  labels:
+    app: xvzf-tech
+spec:
+  rules:
+    - host: xvzf.tech
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: xvzf-tech-svc
+              servicePort: 80
+
