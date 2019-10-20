@@ -1,24 +1,7 @@
-# xvzf.tech
+# My personal landing page
 
-## Project setup
-```
-npm install
-```
+The UserInterface is based on [vuejs](https://vuejs.org/) and served using the http server integrated in [Golang](https://golang.org/).
+Everything is compiled (even static files!) into a single binary using [Packr](https://github.com/gobuffalo/packr)!
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Infrastructure
+The single binary is packed into a small Docker image (~15Mbytes total) which gets deployed to [Kubernetes](https://kubernetes.io/)
