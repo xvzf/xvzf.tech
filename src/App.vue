@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <i-layout class="_height-100">
-      <i-layout-content>
+      <i-layout-content class="_display-flex _align-items-center">
         <i-container class="_height-100">
           <i-row center-xs middle-xs class="_height-100">
             <i-column>
