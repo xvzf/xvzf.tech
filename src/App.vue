@@ -30,6 +30,9 @@
               <i-button link variant="dark" href="mailto:me@xvzf.tech">
                 <font-awesome-icon icon="envelope" size="lg" />
               </i-button>
+              <i-button link variant="dark" href="https://t.me/tuxoide">
+                <font-awesome-icon icon="telegram-plane" size="lg" />
+              </i-button>
             </i-column>
           </i-row>
         </i-container>
