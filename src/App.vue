@@ -31,7 +31,7 @@
                 <font-awesome-icon icon="envelope" size="lg" />
               </i-button>
               <i-button link variant="dark" href="https://t.me/tuxoide">
-                <font-awesome-icon icon="telegram-plane" size="lg" />
+                <font-awesome-icon :icon="['fab', 'telegram-plane']" size="lg" />
               </i-button>
             </i-column>
           </i-row>
